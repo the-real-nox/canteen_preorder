@@ -1,0 +1,14 @@
+{
+    "Servers": {
+      "PostgreSQL Server": {
+        "Name": "Canteen Preorder",
+        "Group": "Servers",
+        "Host": "postgres",
+        "Port": 5432,
+        "Username": "postgres",
+        "SSLMode": "prefer",
+        "MaintenanceDB": "canteen_preorder"
+      }
+    }
+  }
+  
