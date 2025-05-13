@@ -40,3 +40,28 @@ export const orderItemTable = pgTable(
         check("amount_check", sql`${table.amount} >= 1`)
     ]
 );
+
+export const userRelations = relations(userTable, ({ one }) => ({
+    role: one(roleTable, {
+        fields: [ userTable.roleId ],
+        references: [ roleTable.id ],
+    })  
+}))
+
+export const orderRelations = relations(orderTable, ({ one }) => ({
+    user: one(userTable, {
+        fields: [ orderTable.userId ],
+        references: [ userTable.id ],
+    })
+}))
+
+export const orderItemRelations = relations(orderItemTable, ({ one }) => ({
+    canteenObj: one(canteenObjTable, {
+        fields: [ orderItemTable.canteenObjId ],
+        references: [ canteenObjTable.id ],
+    }),
+    order: one(orderTable, {
+        fields: [ orderItemTable.orderId ],
+        references: [ orderTable.id ],
+    })
+}))
