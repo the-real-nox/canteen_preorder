@@ -1,0 +1,17 @@
+.logoScale {
+    width: 400px;
+    height: 200px;
+}
+
+.inputStyle {
+    width: 400px;
+    background: #faf9f9;
+    border-radius: 3px;
+}
+
+.page{
+    background: #faf9f9;
+    border: 2px solid #faf9f9;
+    border-radius: 5px;
+
+}
