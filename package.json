@@ -9,8 +9,15 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@types/pg": "^8.15.1",
+    "bootstrap": "^5.3.6",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.43.1",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.16.0",
     "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
