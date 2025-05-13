@@ -1,5 +1,5 @@
 {
-  "id": "9e9895d6-f4dc-4c0d-8b88-50386bc81a2f",
+  "id": "ec4204d1-4123-4296-ab81-f0326b049b55",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -94,10 +94,10 @@
           "onDelete": "no action",
           "onUpdate": "no action"
         },
-        "order_item_order_id_canteen_obj_user_id_fk": {
-          "name": "order_item_order_id_canteen_obj_user_id_fk",
+        "order_item_order_id_order_id_fk": {
+          "name": "order_item_order_id_order_id_fk",
           "tableFrom": "order_item",
-          "tableTo": "canteen_obj_user",
+          "tableTo": "order",
           "columnsFrom": [
             "order_id"
           ],
@@ -119,8 +119,8 @@
       },
       "isRLSEnabled": false
     },
-    "public.canteen_obj_user": {
-      "name": "canteen_obj_user",
+    "public.order": {
+      "name": "order",
       "schema": "",
       "columns": {
         "id": {
@@ -132,8 +132,8 @@
         "user_id": {
           "name": "user_id",
           "type": "integer",
-          "primaryKey": true,
-          "notNull": true
+          "primaryKey": false,
+          "notNull": false
         },
         "ordered_at": {
           "name": "ordered_at",
@@ -145,9 +145,9 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "canteen_obj_user_user_id_user_id_fk": {
-          "name": "canteen_obj_user_user_id_user_id_fk",
-          "tableFrom": "canteen_obj_user",
+        "order_user_id_user_id_fk": {
+          "name": "order_user_id_user_id_fk",
+          "tableFrom": "order",
           "tableTo": "user",
           "columnsFrom": [
             "user_id"

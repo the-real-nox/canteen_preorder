@@ -22,9 +22,9 @@ export const canteenObjTable = pgTable("canteen_obj", {
     image: text("image"), // base64-encoded string
 })
 
-export const orderTable = pgTable("canteen_obj_user", {
+export const orderTable = pgTable("order", {
     id: serial("id").primaryKey(),
-    userId: integer("user_id").primaryKey().references(() => userTable.id),
+    userId: integer("user_id").references(() => userTable.id),
     orderedAt: timestamp("ordered_at").defaultNow(),
 });
 
