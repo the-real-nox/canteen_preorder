@@ -1,0 +1,47 @@
+.logoScale {
+    width: 400px;
+    height: 200px;
+}
+
+input::placeholder{
+    color: #aaa;
+    font-style: italic;
+}
+
+.inputStyle {
+    width: 400px;
+    background: #faf9f9;
+    border-radius: 3px;
+    color: #1a1a1a;
+}
+
+.page{
+    background: #faf9f9;
+    border: 2px solid #faf9f9;
+    border-radius: 5px;
+}
+
+.loginButtonFirst{
+    background: blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+}
+
+.loginButtonSecond{
+    background: blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+    width: 190px;
+}
+
+.link {
+    text-decoration: none;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
