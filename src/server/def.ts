@@ -25,11 +25,13 @@ export interface ErrorType {
     message: string,
 }
 
-export enum ErrorID
+export enum ErrorID {
+    NOT_FOUND
+}
 
-const RequestErrors: Record<any, ErrorType> = {
-    NOT_FOUND: {
+const RequestErrors: Record<ErrorID, ErrorType> = {
+    [ErrorID.NOT_FOUND]: {
         code: 1,
-        message: "Test"
+        message: "Wasn't found"
     }
 }
