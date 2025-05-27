@@ -6,6 +6,8 @@ import apiRouter from "./api/index.js";
 config();
 const app = express();
 
+app.use(express.json());
+
 console.log(process.env.PORT);
 
 const PORT = Number(process.env.PORT) || 3000;
