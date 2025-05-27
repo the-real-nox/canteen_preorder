@@ -1,3 +1,4 @@
+import { ValidationError } from 'express-validator';
 import { DateTime } from 'luxon';
 
 export class Payload {
@@ -35,3 +36,10 @@ const RequestErrors: Record<ErrorID, ErrorType> = {
         message: "Wasn't found"
     }
 }
+
+// const RequestError = (array: ValidationError[]) => {
+//     return array.map((v) => ({
+//         field: v.,
+//         reason: v.msg
+//     }))
+// }

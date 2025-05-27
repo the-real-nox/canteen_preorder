@@ -20,6 +20,7 @@ canteenObjRouter.post('/create', canteenObjValidator, (req: Request, res: Respon
         return;
     }
 
+    res.sendStatus(StatusCodes.OK);
 });
 
 
