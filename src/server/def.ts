@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-class Payload {
+export class Payload {
     private successful: boolean;
     private data: any;
 
