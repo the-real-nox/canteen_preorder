@@ -8,6 +8,7 @@ productRouter.post('create',
     .isString(),
     (req, res) => {
         
+        
 });
 
 
