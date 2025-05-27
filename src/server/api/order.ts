@@ -7,8 +7,9 @@ const insertItem = async (item) => {
 
 }
 
-orderRouter.post('/create', (res, req) =>{
+orderRouter.post('/create', (req, res) =>{
     console.log(req.body);
+    res.send(req.body);
 })
 
 export default orderRouter;
