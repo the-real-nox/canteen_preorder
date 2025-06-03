@@ -1,0 +1,11 @@
+.btn-purple:hover {
+    outline: none;
+    border: #9c5daa 1px solid;
+    color: black;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-purple {
+    border: none;
+}
