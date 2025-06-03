@@ -1,5 +1,6 @@
 import "./App.css";
 import {LoginPage} from "./login-page/LoginPage";
+import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
