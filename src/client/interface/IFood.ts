@@ -4,4 +4,5 @@ export interface IFood{
     name: string;
     price: number;
     category: string;
+    amount: number;
 }
