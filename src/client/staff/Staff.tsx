@@ -1,9 +1,36 @@
 import { Navbar, Container, Nav, NavDropdown, FormControl } from "react-bootstrap"; import { FaUserAlt } from "react-icons/fa";
 import { Order } from "./Order";
 import { DateTime } from "luxon";
+import { JSX, useState } from "react";
+
 "react-bootstrap";
 
-export function Page() {
+interface OrderItem {
+    id: number,
+    obj: string,
+    user: string,
+    time: DateTime
+}
+
+let idCounter = 0;
+const doGenID = () => idCounter++;
+
+
+export function StaffPage() {
+
+    const items: OrderItem[] = [
+        { id: doGenID(), obj: 'Burger', user: 'Georg Kollegger', time: DateTime.now() },
+        { id: doGenID(), obj: 'Semmel', user: 'Marko Kushlyk', time: DateTime.now() },
+        { id: doGenID(), obj: 'Hendl', user: 'Fabian Brandstätter', time: DateTime.now() },
+        { id: doGenID(), obj: 'Lasagne', user: 'Bono Bakos', time: DateTime.now() },
+    ]
+
+    const [renderedItems, setRenderedItems] = useState<OrderItem[]>(items);
+
+    let onComplete = (id: number) => {
+        setRenderedItems(renderedItems.filter(v => v.id != id));
+    };
+
 
     return (
         <>
@@ -33,10 +60,11 @@ export function Page() {
                 </div>
 
                 <div className="d-flex m-2 flex-wrap gap-3 justify-content-start">
-                    <Order obj="Burger" user="Georg Kollegger" time={DateTime.now()} />
-                    <Order obj="Semmel" user="Marko Kushlyk" time={DateTime.now()} />
-                    <Order obj="Hendl" user="Fabian Brandstätter" time={DateTime.now()} />
-                    <Order obj="Lasagne" user="Bono Bakos" time={DateTime.now()} />
+                    {
+                        renderedItems.map(d =>
+                            <Order user={d.user} obj={d.obj} id={d.id} time={d.time} onClick={onComplete} />
+                        )
+                    }
                 </div>
             </div>
         </>
