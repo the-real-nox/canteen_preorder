@@ -23,6 +23,10 @@ export function Order({ user, time, obj, onClick, id}: OrderProps) {
                     <Col xs={4}>Time</Col>
                     <Col xs={4} className="text-start fst-italic">{time.toFormat("HH:mm:ss")}</Col>
                 </Row>
+                <Row>
+                    <Col xs={4}>Quantity</Col>
+                    <Col xs={4} className="text-start fst-italic">{Math.floor(Math.random() * 4 + 1)}</Col>
+                </Row>
                 <a href="" className="text-center" style={{ color: "#9c5daa" }}>View details</a>
                 <Button className="m-2" onClick={() => onClick(id)}>Complete</Button>
             </Container>
