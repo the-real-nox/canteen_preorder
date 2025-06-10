@@ -6,18 +6,22 @@ import {ProductCard} from "./ProductCard";
 export const FoodContainer = () => {
     const [filter, setFilter] = useState('All');
     const [products, setProducts] = useState<IFood[]>([ // Sample list for testing
-        { id: 1, image: '/pizza.jpg', name: 'Pizza', price: 8.99, category: 'Food' },
-        { id: 2, image: '/soda.jpg', name: 'Soda', price: 1.99, category: 'Drink' },
-        { id: 3, image: '/burger.jpg', name: 'Burger', price: 6.49, category: 'Food' },
+        { id: 1, image: '/pizza.jpg', name: 'Pizza', price: 8.99, category: 'Food', amount: 5},
+        { id: 2, image: '/soda.jpg', name: 'Soda', price: 1.99, category: 'Drink', amount: 4},
+        { id: 3, image: '/burger.jpg', name: 'Burger', price: 6.49, category: 'Food', amount: 2},
     ]);
 
     const handleSelect = (eventKey: string) => {
         setFilter(eventKey);
     };
 
-    const handleDelete = (id: number) => {
-        setProducts(products.filter(product => product.id !== id));
+    const onOrder = (id: number, quantity: number) => {
+        setProducts(prev =>
+            prev.map(product => product.id === id ? {...product,
+                        amount: Math.max(product.amount - quantity, 0) } : product)
+        );
     };
+
 
     const filteredProducts = filter === 'All'
         ? products
@@ -47,7 +51,8 @@ export const FoodContainer = () => {
                         name={product.name}
                         price={product.price}
                         image={product.image}
-                        onDelete={handleDelete}
+                        onOrder={onOrder}
+                        amount={product.amount}
                     />
                 ))}
             </div>

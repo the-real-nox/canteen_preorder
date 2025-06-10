@@ -5,10 +5,6 @@ import React from "react";
 import {FaUserAlt} from "react-icons/fa";
 import {FoodContainer} from "./FoodContainer";
 
-function TextField(props: { id: string, variant: string, fullWidth: boolean, label: string }) {
-    return null;
-}
-
 export const StudentPage = () => {
     return (
         <>
