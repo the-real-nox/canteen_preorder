@@ -1,19 +1,22 @@
 import "./App.css";
-import { LoginPage } from "./login-page/LoginPage";
-import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+import {LoginPage} from "./login-page/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { StaffPage } from "./staff/Staff";
+import { StudentPage } from "./student-page/StudentPage";
+import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
 
-    return (
-        <Router>
-            <Routes>
-                <Route path="/loginStaff" element={<LoginPage />} />
-                <Route path="/staff" element={<StaffPage />} />
-            </Routes>
-        </Router>
-    );
+  return (
+      <div>
+          <Router>
+              <Routes>
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/staff" element={<StudentPage />} />
+                  <Route path="/student" element={<StudentPage />} />
+              </Routes>
+          </Router>
+      </div>
+  );
 }
 
 export default App;
