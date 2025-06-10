@@ -1,7 +1,7 @@
 import { Navbar, Container, Nav, NavDropdown, FormControl } from "react-bootstrap"; import { FaUserAlt } from "react-icons/fa";
 import { Order } from "./Order";
 import { DateTime } from "luxon";
-import { JSX, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 
 "react-bootstrap";
 
@@ -15,21 +15,36 @@ interface OrderItem {
 let idCounter = 0;
 const doGenID = () => idCounter++;
 
+const data = [
+    { id: doGenID(), obj: 'Burger', user: 'Georg Kollegger', time: DateTime.now() },
+    { id: doGenID(), obj: 'Semmel', user: 'Marko Kushlyk', time: DateTime.now() },
+    { id: doGenID(), obj: 'Hendl', user: 'Fabian Brandstätter', time: DateTime.now() },
+    { id: doGenID(), obj: 'Lasagne', user: 'Bono Bakos', time: DateTime.now() },
+]
 
 export function StaffPage() {
 
-    const items: OrderItem[] = [
-        { id: doGenID(), obj: 'Burger', user: 'Georg Kollegger', time: DateTime.now() },
-        { id: doGenID(), obj: 'Semmel', user: 'Marko Kushlyk', time: DateTime.now() },
-        { id: doGenID(), obj: 'Hendl', user: 'Fabian Brandstätter', time: DateTime.now() },
-        { id: doGenID(), obj: 'Lasagne', user: 'Bono Bakos', time: DateTime.now() },
-    ]
-
-    const [renderedItems, setRenderedItems] = useState<OrderItem[]>(items);
+    const [renderedItems, setRenderedItems] = useState<OrderItem[]>(Array.from(data));
 
     let onComplete = (id: number) => {
         setRenderedItems(renderedItems.filter(v => v.id != id));
     };
+
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            console.log(event.key);
+            if (event.key === 'Enter' && event.shiftKey) {
+                let element = {...data[Math.floor(Math.random() * data.length)], id: doGenID()};
+                setRenderedItems(v => [...v, element])
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []); 
 
 
     return (
