@@ -19,8 +19,9 @@ export const ProductCard = ({ id, name, price, image, onOrder, amount }: IFood &
                 style={{
                     backgroundColor: "#f8f9fa",
                     width: "200px",
-                    textDecoration: isOutOfStock ? "line-through red wavy" : "none",
-                    pointerEvents: isOutOfStock ? "none" : "auto", // disables interaction
+                    height: "280px",
+                    textDecoration: isOutOfStock ? "line-through red" : "none",
+                    pointerEvents: isOutOfStock ? "none" : "auto",
                 }}
             >
                 {isOutOfStock && (
