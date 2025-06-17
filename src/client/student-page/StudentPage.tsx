@@ -26,7 +26,7 @@ export const StudentPage = () => {
                                     <Nav.Link href="/news" className={"text-white"}>News</Nav.Link>
                                     <Nav.Link href="/history" className={"text-white"}>History</Nav.Link>
                                     <Nav className="ms-auto">
-                                        <Nav.Link href="/loginStaff">
+                                        <Nav.Link href="/login">
                                             <FaUserAlt className={"fs-4 text-white"}/>
                                         </Nav.Link>
                                     </Nav>

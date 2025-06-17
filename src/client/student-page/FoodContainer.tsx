@@ -5,10 +5,12 @@ import {ProductCard} from "./ProductCard";
 
 export const FoodContainer = () => {
     const [filter, setFilter] = useState('All');
-    const [products, setProducts] = useState<IFood[]>([ // Sample list for testing
+    const [products, setProducts] = useState<IFood[]>([
         { id: 1, image: '/pizza.jpg', name: 'Pizza', price: 8.99, category: 'Food', amount: 5},
         { id: 2, image: '/soda.jpg', name: 'Soda', price: 1.99, category: 'Drink', amount: 4},
         { id: 3, image: '/burger.jpg', name: 'Burger', price: 6.49, category: 'Food', amount: 2},
+        { id: 4, image: '/cola.jpg', name: 'Cola', price: 2.50, category: 'Drink', amount: 7},
+        { id: 5, image: '/steak.jpg', name: 'Steak', price: 11.49, category: 'Food', amount: 3},
     ]);
 
     const handleSelect = (eventKey: string) => {
