@@ -1,11 +1,13 @@
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import "../css/student-page.css";
 import "../App.css"
-import React from "react";
+import React, {useState} from "react";
 import {FaUserAlt} from "react-icons/fa";
 import {FoodContainer} from "./FoodContainer";
 
 export const StudentPage = () => {
+    const [searchValue, setSearchValue] = useState("");
+
     return (
         <>
             <div className={"vw-100 vh-100"}>
@@ -18,6 +20,7 @@ export const StudentPage = () => {
                                 type="text"
                                 placeholder="Search..."
                                 className={"searchBar text-black"}
+                                onChange={(e) => setSearchValue(e.target.value)}
                             />
                         </div>
                         <div className="d-flex justify-content-end">
@@ -35,7 +38,7 @@ export const StudentPage = () => {
                         </div>
                     </Container>
                 </Navbar>
-                <FoodContainer/>
+                <FoodContainer searchValue={searchValue}/>
             </div>
         </>
     );

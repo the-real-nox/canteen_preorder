@@ -3,7 +3,11 @@ import {useState} from "react";
 import {IFood} from "../interface/IFood";
 import {ProductCard} from "./ProductCard";
 
-export const FoodContainer = () => {
+interface FoodContainerProps {
+    searchValue: string;
+}
+
+export const FoodContainer = ({searchValue}:FoodContainerProps) => {
     const [filter, setFilter] = useState('All');
     const [products, setProducts] = useState<IFood[]>([
         { id: 1, image: '/pizza.jpg', name: 'Pizza', price: 8.99, category: 'Food', amount: 5},
@@ -25,9 +29,11 @@ export const FoodContainer = () => {
     };
 
 
-    const filteredProducts = filter === 'All'
-        ? products
-        : products.filter(product => product.category === filter);
+    const filteredProducts = products.filter(product => {
+        const matchesCategory = filter === 'All' || product.category === filter;
+        const matchesSearch = product.name.toLowerCase().includes(searchValue.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
 
     return (
         <div className={"vw-100 vh-100 p-3"}>
