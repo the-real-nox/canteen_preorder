@@ -29,10 +29,6 @@ export const FoodContainer = ({searchValue}:FoodContainerProps) => {
     };
 
 
-    /*const filteredProducts = filter === 'All'
-        ? products
-        : products.filter(product => product.category === filter);*/
-
     const filteredProducts = products.filter(product => {
         const matchesCategory = filter === 'All' || product.category === filter;
         const matchesSearch = product.name.toLowerCase().includes(searchValue.toLowerCase());
