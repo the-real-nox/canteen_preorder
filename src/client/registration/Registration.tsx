@@ -7,11 +7,11 @@ export function Registration() {
             <Form className="border p-3 rounded">
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>First name</Form.Label>
-                    <Form.Control type="email" placeholder="First-name" />
+                    <Form.Control type="text" placeholder="First-name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Last name</Form.Label>
-                    <Form.Control type="email" placeholder="Last-name" />
+                    <Form.Control type="text" placeholder="Last-name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
